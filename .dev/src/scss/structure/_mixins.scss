@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
 ///////////// textos
 @mixin container {
 	margin: 0 auto;
@@ -6,7 +6,7 @@
 }
 
 @mixin hero {
-	font-family: "Inter", sans-serif;
+	font-family: "Oxygen", sans-serif;
 	margin: 0;
 	font-size: 56px;
 	font-weight: bold;
@@ -17,7 +17,7 @@
 	}
 }
 @mixin general-title {
-	font-family: "Inter", sans-serif;
+	font-family: "Oxygen", sans-serif;
 	margin: 0;
 	font-size: 40px;
 	font-weight: bold;
@@ -27,7 +27,7 @@
 	}
 }
 @mixin general-title-smaller {
-	font-family: "Inter", sans-serif;
+	font-family: "Oxygen", sans-serif;
 	margin: 0;
 	font-size: 32px;
 	font-weight: bold;
@@ -37,7 +37,7 @@
 	}
 }
 @mixin sub-title {
-	font-family: "Inter", sans-serif;
+	font-family: "Oxygen", sans-serif;
 	margin: 0;
 	font-size: 24px;
 	font-weight: bold;
@@ -47,7 +47,7 @@
 	}
 }
 @mixin text {
-	font-family: "Inter", sans-serif;
+	font-family: "Oxygen", sans-serif;
 	margin: 0;
 	font-size: 16px;
 	font-style: normal;
@@ -55,7 +55,7 @@
 	line-height: 150%;
 }
 @mixin small-text {
-	font-family: "Inter", sans-serif;
+	font-family: "Oxygen", sans-serif;
 	margin: 0;
 	font-size: 12px;
 	font-style: normal;
@@ -64,7 +64,7 @@
 }
 @mixin legenda {
 	color: #a6a6a6;
-	font-family: "Inter", sans-serif;
+	font-family: "Oxygen", sans-serif;
 	margin: 0;
 	font-size: 16px;
 	font-style: normal;

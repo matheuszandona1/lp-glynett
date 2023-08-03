@@ -116,18 +116,3 @@ input:valid + label {
 		background-color: #fff;
 	}
 }
-
-.card-resources {
-	max-width: 397px;
-	padding: 32px 40px;
-	background-color: $cor-primaria-clara;
-	@include s-border;
-	&__icon {
-		padding: 16px;
-		background-color: $neutro-50;
-		display: inline-block;
-		@include s-border;
-		margin-bottom: 24px;
-		color: $texto-resources;
-	}
-}
