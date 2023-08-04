@@ -59,6 +59,8 @@ input:valid + label {
 	height: auto;
 	position: relative;
 	label {
+		display: flex;
+		align-items: center;
 		img {
 			margin-right: 12px;
 		}
@@ -98,6 +100,10 @@ input:valid + label {
 	@include s-border;
 	background: $cor-primaria;
 	display: inline-block;
+	&:hover {
+		color: #fff;
+		background-color: rgba(35, 66, 58, 0.8);
+	}
 	&.no-color {
 		background-color: transparent;
 		color: $cor-primaria;
@@ -114,5 +120,9 @@ input:valid + label {
 	&.white {
 		color: $cor-primaria;
 		background-color: #fff;
+		&:hover {
+			color: $cor-primaria;
+			background-color: #f0f0f0;
+		}
 	}
 }
