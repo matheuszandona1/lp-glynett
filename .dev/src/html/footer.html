@@ -1,15 +1,17 @@
 <footer class="footer">
 	<div class="footer__container">
-		<div class="footer__logo"></div>
 		<p class="default__desc">Todos os direitos reservados.</p>
-		<p class="default__desc">CNPJ: 00.000.000/0000-00</p>
 	</div>
 </footer>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="./../node_modules/jquery/dist/jquery.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="./js/index.js"></script>
 <script>
-	AOS.init()
+	AOS.init({
+		disable: function () {
+			return window.innerWidth < 768
+		},
+	})
 </script>

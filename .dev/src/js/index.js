@@ -4,7 +4,24 @@ $(".testimonials__content").slick({
 	slidesToScroll: 3,
 	prevArrow: $(".slide-slick-prev"),
 	nextArrow: $(".slide-slick-next"),
-	adaptiveHeight: true,
+
+	responsive: [
+		{
+			breakpoint: 600,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+			},
+		},
+		{
+			breakpoint: 480,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				arrows: false,
+			},
+		},
+	],
 })
 
 $(document).ready(function () {

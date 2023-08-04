@@ -2,11 +2,9 @@
 	&__title {
 		@include general-title;
 		color: $cor-primaria;
+		margin: 0;
 		&.smaller {
 			font-size: 32px;
-		}
-		@include media(s) {
-			text-align: center;
 		}
 	}
 	&__desc {
@@ -63,13 +61,14 @@
 	&__container {
 		display: flex;
 		padding: 80px 0px;
+
 		justify-content: center;
 		@include container;
 		gap: 64px;
 		color: $neutro-50;
 		@include media(s) {
 			flex-direction: column;
-			padding: 20 24px 60px;
+			padding: 60px 24px;
 		}
 	}
 	&__form {
@@ -158,6 +157,7 @@
 	.default__title {
 		color: $cor-primaria;
 		margin: 16px 0px;
+		margin-top: 0px;
 	}
 	.default__desc {
 		color: $texto-legenda;
@@ -165,6 +165,16 @@
 		margin-bottom: 32px;
 		text-align: center;
 		max-width: 1240px;
+
+		@include media(s) {
+			br {
+				display: none;
+			}
+			text-align: left;
+			b {
+				display: block;
+			}
+		}
 	}
 	&__content {
 		display: flex;
@@ -174,12 +184,18 @@
 		flex-wrap: wrap;
 		margin-bottom: 32px;
 		@include container;
+		@include media(s) {
+			flex-wrap: nowrap;
+			justify-content: start;
+			overflow: auto;
+			max-width: 100%;
+		}
 	}
 	.card-resources {
 		max-width: 292px;
 		width: 100%;
 		height: 240px;
-
+		flex-shrink: 0;
 		padding: 32px 40px;
 		background-color: $cor-primaria-clara;
 		@include s-border;
@@ -248,7 +264,6 @@
 		color: $texto-legenda;
 		margin-bottom: 24px;
 		@include media(s) {
-			text-align: center;
 		}
 	}
 	&__list {
@@ -270,23 +285,39 @@
 .politics {
 	background-color: $cor-primaria;
 	padding: 80px 0px;
+	@include media(s) {
+		padding: 60px 0px;
+	}
 	&__container {
 		@include container;
 		color: $neutro-50;
+		@include media(s) {
+			padding: 0px 24px;
+		}
 	}
 	.default__title {
 		color: $neutro-50;
 		text-align: center;
 		margin-bottom: 24px;
+		@include media(s) {
+			text-align: left;
+		}
 	}
 	.default__desc {
 		text-align: center;
 		margin-bottom: 32px;
+		@include media(s) {
+			text-align: left;
+		}
 	}
 	&__content {
 		display: flex;
 		justify-content: center;
 		gap: 24px;
+		@include media(s) {
+			overflow: auto;
+			justify-content: start;
+		}
 	}
 	&__card {
 		padding: 32px 40px;
@@ -332,7 +363,7 @@
 			display: inline-block;
 		}
 		.default__title {
-			margin: 24px 0px;
+			margin: 0px 0px 28px;
 		}
 		.default__desc {
 			color: $texto-legenda;
@@ -342,18 +373,26 @@
 	&__content {
 		@include container;
 		margin-bottom: 48px;
+		@include media(s) {
+			max-width: 100%;
+			margin-bottom: 24px;
+		}
 		.slick-track {
 			padding: 20px 0px;
 		}
 	}
 	&__card {
-		max-width: 397px;
+		// max-width: 397px;
 		padding: 32px 40px;
 		margin: 0px 12px;
 		height: 456px;
 		display: flex !important;
 		flex-direction: column;
-
+		@include media(s) {
+			height: unset;
+			margin: 0 5px;
+			height: 576px;
+		}
 		@include s-border;
 		border: 1px solid #f6f6f6;
 		@include l-shadow;
@@ -370,6 +409,7 @@
 		display: flex;
 		gap: 24px;
 		margin-bottom: 48px;
+
 		button {
 			appearance: none;
 			background-color: transparent;
@@ -383,26 +423,34 @@
 	@include media(s) {
 		padding: 60px 0px;
 	}
+	&__img {
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
 	&__container {
 		@include container;
+		gap: 64px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		flex-direction: column;
 		@include media(s) {
 			padding: 0 24px;
+			flex-direction: column;
+			gap: 32px;
 		}
 		.default__title {
 			color: $neutro-50;
-			text-align: center;
 			margin: 24px 0px;
+			max-width: 500px;
 		}
 		.default__desc {
 			color: $neutro-50;
-			text-align: center;
 			margin-bottom: 64px;
+			max-width: 501px;
 			@include media(s) {
-				margin-bottom: 40px;
+				margin-bottom: 0px;
 			}
 		}
 		.tag {
@@ -412,13 +460,63 @@
 			}
 		}
 	}
+	&__content {
+		max-width: 588px;
+	}
 	&__form {
+		.form__holder {
+			display: flex;
+			width: 100%;
+			gap: 16px;
+			#estadoBefore {
+				position: relative;
+				&::before {
+					position: absolute;
+					content: url("../assets/map.svg");
+					left: 16px;
+					top: 14px;
+				}
+			}
+			#cidadeBefore {
+				position: relative;
+				&::before {
+					position: absolute;
+					content: url("../assets/location_on.svg");
+					left: 16px;
+					top: 14px;
+				}
+			}
+			select {
+				width: 100%;
+				appearance: none;
+				border: 1px solid $texto-legenda;
+				@include s-border;
+				padding: 16px;
+				background-color: #fff;
+				color: $texto-legenda;
+				padding-left: 40px;
+			}
+		}
+		max-width: 588px;
 		width: 100%;
 		display: flex;
 		gap: 16px;
 		background-color: #fff;
 		padding: 64px;
 		flex-wrap: wrap;
+		.default__title {
+			color: $cor-primaria;
+			font-weight: 400;
+			font-size: 32px;
+			line-height: 150%;
+			margin: 0;
+			margin-bottom: 24px;
+			@include media(s) {
+				font-size: 24px;
+				line-height: 120%;
+				margin-bottom: 16px;
+			}
+		}
 		@include media(s) {
 			padding: 32px;
 		}
@@ -426,9 +524,7 @@
 			flex-wrap: wrap;
 		}
 		@include l-border;
-		input {
-			max-width: 300px;
-		}
+
 		.button {
 			border: none;
 			@include media(s) {
@@ -443,7 +539,9 @@
 	&__container {
 		@include container;
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
+		align-items: center;
 		gap: 24px;
 		@include media(s) {
 			flex-direction: column;
@@ -473,11 +571,17 @@
 		}
 	}
 	&__content {
-		max-width: 640px;
+		@include container;
 		width: 100%;
 		.accordion {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 16px;
 			&-item {
-				margin-bottom: 16px;
+				border: none;
+				flex-shrink: 0;
+				max-width: 612px;
+				width: 100%;
 				border: none;
 				&:last-child {
 					margin-bottom: 0px;
@@ -485,17 +589,30 @@
 			}
 			&-body {
 				@include text;
+				background-color: #f0f0f0;
+				border-radius: 0px 0px 8px 8px;
+				padding: 24px;
 			}
 			&-button {
 				color: $texto-resources;
+				border: none;
+				background-color: #f0f0f0;
+				padding: 24px;
 				@include text;
+				color: $cor-primaria;
+				font-weight: bold;
 				&:focus {
 					border: none;
 					box-shadow: none;
 				}
 				&:not(.collapsed) {
 					color: $cor-primaria;
-					background-color: $cor-primaria-clara;
+					background-color: #f0f0f0;
+					border-radius: 8px 8px 0px 0px;
+					border: none;
+				}
+				&.collapsed {
+					@include s-border;
 				}
 				&::after {
 					width: 10px;
