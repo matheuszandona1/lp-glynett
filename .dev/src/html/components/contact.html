@@ -4,7 +4,8 @@
 			<div class="contact__img"><img src="./assets/xampu.png?as=webp" alt="" /></div>
 			<h3 class="default__title">Comece agora a distribuir os produtos Glynett</h3>
 			<p class="default__desc">
-				Ofereça aos seus clientes um produto profissional que vai além da qualidade comprovada. Temos um suporte técnico diferenciado, que garante mais
+				Ofereça aos seus clientes um produto profissional que vai além da qualidade comprovada. Temos um suporte técnico
+				diferenciado, que garante mais
 				segurança e tranquilidade para você, para os profissionais de beleza e também para os seus clientes finais.
 				<br />
 				<br />
@@ -14,29 +15,30 @@
 				</b>
 			</p>
 		</div>
-		<form action="" class="contact__form">
-			<h2 class="default__title">Preencha o formulário e aguarde, que o nosso setor comercial entrará em contato em breve:</h2>
+		<form action="./sendemail.php" method="get" class="contact__form">
+			<h2 class="default__title">Preencha o formulário e aguarde, que o nosso setor comercial entrará em contato em
+				breve:</h2>
 			<div class="form-gap">
 				<div class="input_wrap">
-					<input type="text" required />
+					<input type="text" name="nome" required />
 					<label><img src="./assets/person.svg" alt="ícone para indicar o campo de nome " /> Nome</label>
 				</div>
 				<div class="input_wrap">
-					<input type="email" required />
+					<input type="email" name="email" required />
 					<label><img src="./assets/mail.svg" alt="uma carta para indicar o campo de email" /> E-mail</label>
 				</div>
 				<div class="input_wrap">
-					<input type="tel" required />
+					<input type="tel" name="celular" id="phone" required />
 					<label><img src="./assets/phone.svg" alt="um ícone de telefone" /> Telefone</label>
 				</div>
 				<div class="form__holder">
 					<div class="input_wrap" id="estadoBefore">
-						<select name="" id="estado">
+						<select name="estado" id="estado">
 							<option value="">Estado</option>
 						</select>
 					</div>
 					<div class="input_wrap" id="cidadeBefore">
-						<select name="" id="cidade">
+						<select name="cidade" id="cidade">
 							<option value="">Cidade</option>
 						</select>
 					</div>
