@@ -41,6 +41,7 @@
 		"sharp": "^0.31.1"
 	},
 	"dependencies": {
-		"jquery": "^3.6.3"
+		"jquery": "^3.6.3",
+		"slick-carousel": "^1.8.1"
 	}
 }
