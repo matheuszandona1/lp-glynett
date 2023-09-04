@@ -35,19 +35,22 @@ fetch("https://servicodados.ibge.gov.br/api/v1/localidades/estados")
 
 		estados.forEach((estado) => {
 			const option = document.createElement("option")
-			option.value = estado.id
+			option.value = estado.nome
 			option.textContent = estado.nome
+			option.setAttribute("data-id", estado.id) // Armazena o ID do estado como um atributo data-id
 			selectEstado.appendChild(option)
+			console.log("opção estado", estados)
 		})
 	})
+
 document.querySelector("#estado").addEventListener("change", function () {
-	const idEstado = this.value
+	const selectedOption = this.options[this.selectedIndex]
+	const idEstado = selectedOption.getAttribute("data-id") // Pega o ID do estado do atributo data-id
 
 	// Limpa o select de cidades
 	const selectCidade = document.querySelector("#cidade")
 	selectCidade.innerHTML = ""
 
-	// Busca as cidades do estado selecionado
 	fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${idEstado}/municipios`)
 		.then((response) => response.json())
 		.then((cidades) => {
@@ -55,7 +58,7 @@ document.querySelector("#estado").addEventListener("change", function () {
 
 			cidades.forEach((cidade) => {
 				const option = document.createElement("option")
-				option.value = cidade.id
+				option.value = cidade.nome
 				option.textContent = cidade.nome
 				selectCidade.appendChild(option)
 			})
@@ -63,5 +66,5 @@ document.querySelector("#estado").addEventListener("change", function () {
 })
 
 $(document).ready(function () {
-	$("#phone").mask("(00) 0000-0000")
+	$("#phone").mask("(00) 0 0000-0000")
 })

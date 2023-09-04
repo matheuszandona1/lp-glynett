@@ -15,12 +15,13 @@
 				</b>
 			</p>
 		</div>
-		<form action="./sendemail.php" method="get" class="contact__form">
+		<form action="https://api.staticforms.xyz/submit" method="post" id="form" class="contact__form">
+			<input type="hidden" name="accessKey" value="1e87232d-d950-4acf-8e98-13d2ba39f800">
 			<h2 class="default__title">Preencha o formulário e aguarde, que o nosso setor comercial entrará em contato em
 				breve:</h2>
 			<div class="form-gap">
 				<div class="input_wrap">
-					<input type="text" name="nome" required />
+					<input type="text" name="$nome" required />
 					<label><img src="./assets/person.svg" alt="ícone para indicar o campo de nome " /> Nome</label>
 				</div>
 				<div class="input_wrap">
@@ -28,23 +29,25 @@
 					<label><img src="./assets/mail.svg" alt="uma carta para indicar o campo de email" /> E-mail</label>
 				</div>
 				<div class="input_wrap">
-					<input type="tel" name="celular" id="phone" required />
+					<input type="tel" name="$telefone" id="phone" required />
 					<label><img src="./assets/phone.svg" alt="um ícone de telefone" /> Telefone</label>
 				</div>
 				<div class="form__holder">
 					<div class="input_wrap" id="estadoBefore">
-						<select name="estado" id="estado">
+						<select name="$estado" id="estado">
 							<option value="">Estado</option>
 						</select>
 					</div>
 					<div class="input_wrap" id="cidadeBefore">
-						<select name="cidade" id="cidade">
+						<select name="$cidade" id="cidade">
 							<option value="">Cidade</option>
 						</select>
 					</div>
 				</div>
 			</div>
-			<button type="submit" class="button bigger">quero lucrar</button>
+			<input type="text" name="honeypot" style="display: none;">
+			<input type="hidden" name="redirectTo" value="https://glynett.com.br/campanha-seja-um-distribuidor/typ.html">
+			<input type="submit" class="button bigger" value="QUERO LUCRAR">
 		</form>
 	</div>
 </section>
