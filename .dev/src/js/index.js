@@ -67,4 +67,13 @@ document.querySelector("#estado").addEventListener("change", function () {
 
 $(document).ready(function () {
 	$("#phone").mask("(00) 0 0000-0000")
+	$("#form").submit(function (e) {
+		var valor = $("#phone").val()
+
+		// Verifica se o valor do input tem o caractere placeholder ou não está completo
+		if (valor.indexOf("_") > -1 || valor.replace(/[^0-9]/g, "").length !== 11) {
+			alert("Por favor, insira um número de telefone válido!")
+			e.preventDefault() // impede o envio do formulário
+		}
+	})
 })
